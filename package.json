@@ -1,0 +1,11 @@
+{
+  "name": "event-photos-core",
+  "version": "0.0.1",
+  "description": "The core of the event photos application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "selbekk <selbeezy@gmail.com>",
+  "license": "ISC"
+}
