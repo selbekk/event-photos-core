@@ -10,6 +10,17 @@ let EventService = {
         mockDataSource.getLatest(deferred.resolve);
 
         return deferred.promise;
+    },
+    getEvent(tag) {
+        let deferred = Q.defer();
+        mockDataSource.getEvent(tag, function(err, event) {
+            if(err) {
+                return deferred.reject(err);
+            }
+            deferred.resolve(event);
+        });
+
+        return deferred.promise;
     }
 };
 
