@@ -1,14 +1,18 @@
-let service = require('../services/event-service');
+const assign = require('object-assign');
+const eventService = require('../services/event-service');
+const photoService = require('../services/photo-service');
 
-let EventResource = {
+const EventResource = {
     getLatest(req, res, next) {
-        service.getLatest()
+        eventService.getLatest()
             .then(events => res.json(events))
             .catch(next);
     },
     getEvent(req, res, next) {
-        service.getEvent(req.params.tag)
-            .then(event => res.json(event))
+        eventService.getEvent(req.params.tag)
+            .then(photoService.getPhotosForEvent)
+            .then(event => assign({}, event, { imageCount: event.photos.length }))
+            .then(eventWithPhotos => res.json(eventWithPhotos))
             .catch(next);
     }
 };

@@ -4,6 +4,5 @@ module.exports = function(props) {
     this.title = props.title;
     this.tag = props.tag;
     this.description = props.description;
-    this.coverPhoto = 'https://placeimg.com/640/480/any';
-    this.imageCount = Math.floor(Math.random() * 1000);
+    this.coverPhoto = 'https://placeimg.com/640/480/any?random=' + Math.floor(Math.random() * 1000);
 };

@@ -1,19 +1,19 @@
-let Q = require('q');
+const Q = require('q');
 
-let mockDataSource = require('../utils/mock-events.js');
+const mockDataSource = require('../utils/mock-datasource.js');
 
-let EventService = {
+const EventService = {
     getLatest() {
-        let deferred = Q.defer();
+        const deferred = Q.defer();
 
         // TODO: Get data from real data source
-        mockDataSource.getLatest(deferred.resolve);
+        mockDataSource.getLatestEvents(deferred.resolve);
 
         return deferred.promise;
     },
     getEvent(tag) {
-        let deferred = Q.defer();
-        mockDataSource.getEvent(tag, function(err, event) {
+        const deferred = Q.defer();
+        mockDataSource.getEvent(tag, (err, event) => {
             if(err) {
                 return deferred.reject(err);
             }
