@@ -31,6 +31,16 @@ const mockPhotos = [
         author: 'Anothermous'
     }),
     new Photo({
+        eventTag: 'anneandkris',
+        description: 'we are more awesome',
+        author: 'Anothermous'
+    }),
+    new Photo({
+        eventTag: 'anneandkris',
+        description: 'we are more awesome',
+        author: 'Anothermous'
+    }),
+    new Photo({
         eventTag: 'chrisandbirthe',
         description: 'they are also awesome',
         author: 'Other dude'
